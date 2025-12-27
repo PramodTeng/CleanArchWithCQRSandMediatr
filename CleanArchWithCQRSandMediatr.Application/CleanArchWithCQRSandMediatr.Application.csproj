@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../CleanArchWithCQRSandMediatr.Domain/CleanArchWithCQRSandMediatr.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common/Exceptions/" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+  </ItemGroup>
+</Project>
