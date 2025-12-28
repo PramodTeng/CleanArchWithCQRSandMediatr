@@ -20,8 +20,7 @@ public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, BlogVm>
 
     public async Task<BlogVm> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
     {
-        var blog = await _blogRepository.GetByIdAsync(request.BlogId);
-
+        var blog = await _blogRepository.GetByIdAsync(request.BlogId) ?? throw new KeyNotFoundException($"Blog with ID {request.BlogId} not found");
         return _mapper.Map<BlogVm>(blog);
     }
 }

@@ -37,7 +37,7 @@ public class BlogRepository : IBlogRepository
             .ToListAsync();
     }
 
-    public async Task<Blog> GetByIdAsync(int id)
+    public async Task<Blog?> GetByIdAsync(int id)
     {
         return await _blogDBContext.Blogs.AsNoTracking()
             .FirstOrDefaultAsync(blog => blog.Id == id);
